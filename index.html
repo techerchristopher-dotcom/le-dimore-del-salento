@@ -448,7 +448,6 @@
       if (slides.length < 2) return;
       var i = 0, timer = null;
       var DELAY = 5500;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function go(n) {
         n = (n + slides.length) % slides.length;
@@ -461,15 +460,19 @@
       }
       function next() { go(i + 1); }
       function stop() { if (timer) { clearInterval(timer); timer = null; } }
-      function start() { if (reduce) return; stop(); timer = setInterval(next, DELAY); }
+      // Auto-défilement toujours actif (demande explicite) ; sous prefers-reduced-motion
+      // le CSS neutralise déjà le zoom et rend le fondu quasi instantané.
+      function start() { stop(); timer = setInterval(next, DELAY); }
 
       dots.forEach(function (d, idx) {
         d.addEventListener('click', function () { go(idx); start(); });
       });
-      var hero = carousel.closest('section');
-      if (hero) {
-        hero.addEventListener('mouseenter', stop);
-        hero.addEventListener('mouseleave', start);
+      // Pause uniquement au survol des puces — pas de tout le hero plein écran
+      // (sinon le curseur, presque toujours dans le hero, met l'auto en pause en continu)
+      var dotsWrap = document.getElementById('hero-dots');
+      if (dotsWrap) {
+        dotsWrap.addEventListener('mouseenter', stop);
+        dotsWrap.addEventListener('mouseleave', start);
       }
       document.addEventListener('visibilitychange', function () {
         if (document.hidden) stop(); else start();
