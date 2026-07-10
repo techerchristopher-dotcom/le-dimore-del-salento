@@ -89,13 +89,13 @@
 
 <!-- ===== HEADER ===== -->
 <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(20px,5vw,64px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease,color .4s ease;color:#fff">
-  <div style="display:flex;align-items:center;gap:clamp(9px,1.4vw,14px)">
+  <a id="brand-home" href="#" style="display:flex;align-items:center;gap:clamp(9px,1.4vw,14px);text-decoration:none;color:inherit;cursor:pointer">
     <img src="images/logo.png" alt="Le Dimore del Salento" style="height:clamp(42px,4.8vw,52px);width:auto;display:block;flex:none;filter:drop-shadow(0 1px 3px rgba(0,0,0,.22))">
     <div style="line-height:1">
       <div id="wm" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(18px,2vw,22px);letter-spacing:.01em;transition:color .4s ease">Le Dimore <span style="font-style:italic;font-weight:400">del Salento</span></div>
       <div id="wm-sub" style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.82;margin-top:3px;transition:color .4s ease">Madirokely · Nosy Be</div>
     </div>
-  </div>
+  </a>
   <div style="display:flex;align-items:center;gap:clamp(10px,2vw,18px)">
     <div id="lang-switch" style="display:flex;align-items:center;gap:3px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em">
       <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -749,6 +749,14 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // Logo / marque -> retour en haut de page
+    var brand = document.getElementById('brand-home');
+    if (brand) brand.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    });
   });
 </script>
 
