@@ -25,7 +25,14 @@
   @keyframes scrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}80%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
   /* Image slots */
-  .slot{display:block;width:100%;height:100%;object-fit:cover}
+  .slot{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+
+  /* Lightbox — agrandissement des photos au clic */
+  #lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(10,20,19,.92);padding:24px;cursor:zoom-out;opacity:0;transition:opacity .3s ease}
+  #lightbox.open{display:flex;opacity:1}
+  #lightbox img{max-width:94vw;max-height:92vh;border-radius:8px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);transform:scale(.96);transition:transform .35s cubic-bezier(.16,.7,.3,1)}
+  #lightbox.open img{transform:scale(1)}
+  #lightbox .lb-close{position:absolute;top:16px;right:26px;color:#fff;font-size:38px;line-height:1;opacity:.85;font-family:system-ui,sans-serif;cursor:pointer}
 
   /* Hero carousel — fondu enchaîné doux + Ken Burns */
   .hero-carousel{position:absolute;inset:0}
@@ -147,7 +154,7 @@
       <div style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,33,31,.42);margin-bottom:16px">L'emplacement</div>
       <div style="display:flex;flex-direction:column;gap:11px">
         <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:rgba(22,33,31,.86)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 7c2-1.4 4-1.4 6 0s4 1.4 6 0 4-1.4 6 0M2 12c2-1.4 4-1.4 6 0s4 1.4 6 0 4-1.4 6 0M2 17c2-1.4 4-1.4 6 0s4 1.4 6 0 4-1.4 6 0"/></svg>Plage de Madirokely<span style="color:rgba(22,33,31,.45);font-weight:400">&nbsp;· 2 min</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:rgba(22,33,31,.86)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 15h18l-1.6 4.6a2 2 0 0 1-1.9 1.4H6.5a2 2 0 0 1-1.9-1.4L3 15Z"/><path d="M6 15V8l6-2.5L18 8v7"/></svg>Ambatoloaka<span style="color:rgba(22,33,31,.45);font-weight:400">&nbsp;· 10 min</span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:rgba(22,33,31,.86)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 4h16l-8 9-8-9Z"/><path d="M12 13v6M8 21h8"/></svg>Ambatoloaka<span style="color:rgba(22,33,31,.45);font-weight:400">&nbsp;· 10 min</span></div>
         <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:rgba(22,33,31,.86)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Aéroport de Fascène<span style="color:rgba(22,33,31,.45);font-weight:400">&nbsp;· 30 min</span></div>
       </div>
     </div>
@@ -189,9 +196,9 @@
   <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:clamp(32px,4vw,52px)">
     <div>
       <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">La résidence</div>
-      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.01em;margin:0;max-width:16ch">Le béton blanc, le turquoise, la lumière.</h2>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.01em;margin:0;max-width:16ch">Du blanc, du turquoise, de la lumière.</h2>
     </div>
-    <p style="font-size:15.5px;line-height:1.6;color:rgba(22,33,31,.62);max-width:34ch;margin:0">Des espaces neufs et nets, pensés pour deux, à quelques pas du sable de Madirokely.</p>
+    <p style="font-size:16.5px;line-height:1.62;color:rgba(22,33,31,.82);max-width:34ch;margin:0">Des espaces neufs et nets, pensés pour deux, à quelques pas du sable de Madirokely.</p>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));grid-auto-rows:220px;gap:14px">
@@ -476,8 +483,24 @@
 
 </div>
 
+<div id="lightbox" aria-hidden="true"><span class="lb-close" aria-label="Fermer">&times;</span><img alt=""></div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Lightbox — clic sur une photo pour l'agrandir
+    (function () {
+      var lb = document.getElementById('lightbox');
+      if (!lb) return;
+      var lbImg = lb.querySelector('img');
+      function openLb(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+      function closeLb() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+      [].forEach.call(document.querySelectorAll('img.slot'), function (img) {
+        img.addEventListener('click', function () { openLb(img.currentSrc || img.src, img.alt); });
+      });
+      lb.addEventListener('click', closeLb);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+    })();
+
     // Hero carousel — fondu enchaîné automatique
     (function () {
       var carousel = document.getElementById('hero-carousel');
