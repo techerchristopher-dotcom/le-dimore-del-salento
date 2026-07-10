@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Dimore del Salento — Cinq demeures au bord du lagon · Madirokely, Nosy Be</title>
+<meta name="description" content="Appartements neufs climatisés à cinq minutes de la plage de Madirokely, Nosy Be. Clim sans coupure, wifi Starlink, piscine partagée. Réservez en direct avec l'hôte dès 45 € la nuit.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#FBFBF9;color:#16211F;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:#1785C0;text-decoration:none}
+  a:hover{color:#12688F}
+  img{border:0}
+  ::selection{background:#1785C0;color:#fff}
+
+  @keyframes heroZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+  @keyframes drawLine{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes scrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}80%{opacity:1}100%{transform:translateY(14px);opacity:0}}
+
+  /* Image slots */
+  .slot{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* Host portrait placeholder (no photo supplied yet) */
+  .portrait-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    background:linear-gradient(150deg,#1785C0 0%,#12688F 55%,#16211F 100%);color:rgba(255,255,255,.9);text-align:center;padding:24px}
+  .portrait-ph svg{opacity:.85}
+  .portrait-ph span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;max-width:22ch;line-height:1.5;color:rgba(255,255,255,.7)}
+
+  /* Hover states (translated from prototype style-hover) */
+  .h-navcta:hover{background:#12688F;transform:translateY(-1px)}
+  .h-cta:hover{background:#12688F;transform:translateY(-2px)}
+  .h-under:hover{border-color:#fff}
+  .h-chip:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08)}
+  .h-chip2:hover{border-color:rgba(251,251,249,.5)}
+  .h-chip3:hover{border-color:#fff}
+  .h-link:hover{color:#12688F}
+  .h-flink{color:rgba(22,33,31,.68)}
+  .h-flink:hover{color:#1785C0}
+  .h-flink-muted{color:rgba(22,33,31,.5)}
+  .h-flink-muted:hover{color:#1785C0}
+</style>
+</head>
+<body>
+
+<div style="position:relative;width:100%;overflow:hidden">
+
+<!-- ===== HEADER ===== -->
+<header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(20px,5vw,64px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease,color .4s ease;color:#fff">
+  <div style="line-height:1">
+    <div id="wm" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(18px,2vw,22px);letter-spacing:.01em;transition:color .4s ease">Le Dimore <span style="font-style:italic;font-weight:400">del Salento</span></div>
+    <div id="wm-sub" style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.82;margin-top:3px;transition:color .4s ease">Madirokely · Nosy Be</div>
+  </div>
+  <a href="#contact" id="nav-cta" class="h-navcta" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:14px;transition:background .25s ease,transform .25s ease">Réserver en direct</a>
+</header>
+
+<!-- ===== ① HERO ===== -->
+<section aria-label="Hero" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0">
+  <div style="position:absolute;inset:0;overflow:hidden;z-index:0">
+    <div style="position:absolute;inset:0;animation:heroZoom 9s cubic-bezier(.16,.7,.3,1) both;transform-origin:52% 45%">
+      <img class="slot" src="images/slide1.jpg" alt="La piscine partagée au coucher de soleil, au bord du lagon">
+    </div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(10,20,19,.42) 0%,rgba(10,20,19,.05) 32%,rgba(10,20,19,.12) 60%,rgba(10,20,19,.82) 100%)"></div>
+  </div>
+
+  <div style="position:relative;z-index:2;padding:0 clamp(20px,5vw,64px) clamp(40px,7vh,84px);max-width:1240px;width:100%;margin:0 auto">
+    <div style="color:#fff;max-width:820px">
+      <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;opacity:.9;margin-bottom:22px;animation:riseIn .8s .15s ease both">Un bout d'Italie au bord du lagon</div>
+      <h1 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(42px,6.6vw,96px);line-height:1.02;letter-spacing:-.015em;margin:0;animation:riseIn .9s .28s ease both">Cinq demeures au bord du <span style="position:relative;white-space:nowrap;font-weight:400;font-style:italic">lagon<span style="position:absolute;left:0;right:0;bottom:.02em;height:5px;border-radius:3px;background:#1785C0;transform-origin:left;transform:scaleX(0);animation:drawLine 1s 1.1s cubic-bezier(.7,0,.3,1) forwards"></span></span>.</h1>
+      <p style="font-size:clamp(16px,1.5vw,20px);line-height:1.55;max-width:560px;margin:26px 0 34px;color:rgba(255,255,255,.9);animation:riseIn .9s .45s ease both">Appartements neufs à cinq minutes de la plage. Clim sans coupure · wifi Starlink · calme et sécurisé.</p>
+
+      <div style="animation:riseIn .9s .6s ease both">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px">
+          <a href="#contact" class="h-cta" style="display:inline-flex;align-items:center;gap:11px;padding:17px 30px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16.5px;box-shadow:0 16px 40px -12px rgba(23,133,192,.75);transition:background .25s ease,transform .25s ease">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+            Réserver en direct avec l'hôte
+          </a>
+          <a href="#decouvrir" class="h-under" style="display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:600;font-size:15.5px;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.35);transition:border-color .25s ease">Découvrir la résidence</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.82)">
+          <span style="display:inline-flex;align-items:center;gap:7px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Meilleur tarif garanti · réponse rapide · contact humain</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px">
+          <span style="font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.62)">Aussi disponible sur</span>
+          <a href="#contact" class="h-chip" style="display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.32);color:#fff;font-size:12.5px;font-weight:600;transition:border-color .25s ease,background .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
+          <a href="#contact" class="h-chip" style="display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.32);color:#fff;font-size:12.5px;font-weight:600;transition:border-color .25s ease,background .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none">
+    <div style="width:22px;height:36px;border:1.5px solid rgba(255,255,255,.55);border-radius:12px;display:flex;justify-content:center;padding-top:7px"><span style="width:3px;height:7px;border-radius:2px;background:#fff;animation:scrollDot 1.9s ease-in-out infinite"></span></div>
+  </div>
+</section>
+
+<!-- ===== ② BANDEAU ATOUTS ===== -->
+<section id="decouvrir" aria-label="Atouts" style="background:#16211F;color:#FBFBF9;padding:clamp(34px,5vw,52px) clamp(20px,5vw,64px)">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 24px">
+    <div data-reveal style="min-width:120px"><div style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1">5</div><div style="font-size:13px;letter-spacing:.04em;color:rgba(251,251,249,.62);margin-top:5px">appartements</div></div>
+    <div style="width:1px;height:52px;background:rgba(251,251,249,.14)"></div>
+    <div data-reveal style="min-width:120px"><div style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1">45&thinsp;m²</div><div style="font-size:13px;letter-spacing:.04em;color:rgba(251,251,249,.62);margin-top:5px">climatisés</div></div>
+    <div style="width:1px;height:52px;background:rgba(251,251,249,.14)"></div>
+    <div data-reveal style="min-width:120px"><div style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1">5<span style="font-size:.5em;font-family:'Manrope';font-weight:600"> min</span></div><div style="font-size:13px;letter-spacing:.04em;color:rgba(251,251,249,.62);margin-top:5px">de la plage</div></div>
+    <div style="width:1px;height:52px;background:rgba(251,251,249,.14)"></div>
+    <div data-reveal style="min-width:120px"><div style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1">Starlink</div><div style="font-size:13px;letter-spacing:.04em;color:rgba(251,251,249,.62);margin-top:5px">wifi haut débit</div></div>
+    <div style="width:1px;height:52px;background:rgba(251,251,249,.14)"></div>
+    <div data-reveal style="min-width:120px"><div style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1;color:#F2C230">dès 45 €</div><div style="font-size:13px;letter-spacing:.04em;color:rgba(251,251,249,.62);margin-top:5px">la nuit</div></div>
+  </div>
+</section>
+
+<!-- ===== ③ GALERIE BENTO ===== -->
+<section aria-label="Galerie" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px) clamp(40px,6vw,72px);max-width:1320px;margin:0 auto">
+  <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:clamp(32px,4vw,52px)">
+    <div>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">La résidence</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.01em;margin:0;max-width:16ch">Le béton blanc, le turquoise, la lumière.</h2>
+    </div>
+    <p style="font-size:15.5px;line-height:1.6;color:rgba(22,33,31,.62);max-width:34ch;margin:0">Des espaces neufs et nets, pensés pour deux, à quelques pas du sable de Madirokely.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));grid-auto-rows:220px;gap:14px">
+    <div data-reveal style="grid-column:span 2;grid-row:span 2;position:relative;border-radius:6px;overflow:hidden;min-height:220px">
+      <img class="slot" src="images/slide5.jpg" alt="La piscine partagée en grand format">
+    </div>
+    <div data-reveal style="position:relative;border-radius:6px;overflow:hidden">
+      <img class="slot" src="images/slide1.jpg" alt="La terrasse de la résidence">
+    </div>
+    <div data-reveal style="position:relative;border-radius:6px;overflow:hidden">
+      <img class="slot" src="images/slide2.jpg" alt="Chambre climatisée">
+    </div>
+    <div data-reveal style="position:relative;border-radius:6px;overflow:hidden">
+      <img class="slot" src="images/slide3.jpg" alt="Détail lifestyle de la résidence">
+    </div>
+    <div data-reveal style="grid-column:span 2;position:relative;border-radius:6px;overflow:hidden">
+      <img class="slot" src="images/slide4.jpg" alt="Vue large sur l'extérieur de la résidence">
+    </div>
+  </div>
+</section>
+
+<!-- water line divider -->
+<div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,64px)">
+  <svg width="100%" height="14" viewBox="0 0 1200 14" preserveAspectRatio="none" style="display:block;opacity:.9"><path d="M0 7 Q 60 0 120 7 T 240 7 T 360 7 T 480 7 T 600 7 T 720 7 T 840 7 T 960 7 T 1080 7 T 1200 7" fill="none" stroke="#1785C0" stroke-width="1.6"/></svg>
+</div>
+
+<!-- ===== ④ CE QUI FAIT LA DIFFÉRENCE ===== -->
+<section aria-label="Ce qui fait la différence" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto">
+  <div data-reveal style="text-align:center;max-width:640px;margin:0 auto clamp(48px,6vw,80px)">
+    <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">Ce qui fait la différence</div>
+    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,54px);line-height:1.08;letter-spacing:-.01em;margin:0">Quatre choses qui changent<br>vraiment le séjour.</h2>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(48px,7vw,96px)">
+
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;order:0">
+        <img class="slot" src="images/slide4.jpg" alt="Intérieur climatisé, climatiseur au mur">
+      </div>
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(23,133,192,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M12 6l3.5-3M12 6 8.5 3M12 18l3.5 3M12 18l-3.5 3M2 12h20M6 12 3 8.5M6 12 3 15.5M18 12l3-3.5M18 12l3 3.5"/></svg>
+        </div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.1;margin:0 0 14px">La clim ne coupe jamais.</h3>
+        <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0;max-width:44ch">La résidence est alimentée en continu, sans délestage. Tu dors au frais toute la nuit — une vraie rareté à Nosy Be.</p>
+      </div>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="order:1">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(23,133,192,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8 15.5a5 5 0 0 1 8 0"/><circle cx="12" cy="19.5" r="1.1" fill="#1785C0" stroke="none"/></svg>
+        </div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.1;margin:0 0 14px">Du wifi qui marche vraiment.</h3>
+        <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0;max-width:44ch">Connexion Starlink : idéale pour le télétravail, les appels et le streaming. Le haut débit, même au bout de l'île.</p>
+      </div>
+      <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;order:0">
+        <img class="slot" src="images/slide3.jpg" alt="Coin bureau et salon détente">
+      </div>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;order:0">
+        <img class="slot" src="images/slide5.jpg" alt="La résidence le soir, extérieur calme">
+      </div>
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(23,133,192,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5.5c0 4.5 3.2 7.7 8 9.5 4.8-1.8 8-5 8-9.5V6l-8-3Z"/><path d="m9 12 2 2 4-4.5"/></svg>
+        </div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.1;margin:0 0 14px">Calme et sécurisé.</h3>
+        <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0;max-width:44ch">Une résidence tranquille, à l'écart de l'agitation, avec un gardien présent le soir. Tu profites, l'esprit léger.</p>
+      </div>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="order:1">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(232,98,43,.12);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8622B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M3 13c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M12 4c1.6 0 2.5 1.2 2.5 2.6 0 1.8-2.5 4.4-2.5 4.4S9.5 8.4 9.5 6.6C9.5 5.2 10.4 4 12 4Z"/></svg>
+        </div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.1;margin:0 0 14px">La plage à cinq minutes.</h3>
+        <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0;max-width:44ch">Le sable de Madirokely se rejoint à pied. Le matin dans l'eau, le soir au coucher de soleil — sans jamais prendre la voiture.</p>
+      </div>
+      <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;order:0">
+        <img class="slot" src="images/slide1.jpg" alt="La plage de Madirokely">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ⑤ APPARTEMENT TYPE ===== -->
+<section aria-label="L'appartement type" style="background:#F3F0E9;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">L'appartement type</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.01em;margin:0 0 18px">45 m² neufs, pensés pour deux.</h2>
+      <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0 0 30px;max-width:46ch">Les cinq appartements sont similaires : une chambre climatisée, une cuisine équipée, un séjour lumineux. Neuf, propre, sans fioritures — juste ce qu'il faut pour se sentir chez soi.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px">
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M4 12h16M6 6l12 12M18 6 6 18"/></svg>Chambre climatisée</div>
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4ZM7 14v6M17 14v6"/></svg>Cuisine équipée</div>
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3ZM6 12V6a2 2 0 0 1 4 0M6 19l-1 2M18 19l1 2"/></svg>Salle d'eau privative</div>
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0M6 12.5a9 9 0 0 1 12 0M10 16a4 4 0 0 1 4 0"/></svg>Wifi Starlink</div>
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 7v12h18V7M3 7l3-3h12l3 3M9 11h6"/></svg>Linge fourni</div>
+        <div style="display:flex;align-items:center;gap:11px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11M4 20h16M9 20v-6h6v6"/></svg>Résidence neuve</div>
+      </div>
+      <div style="margin-top:26px;display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:rgba(22,33,31,.55)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="1.6" stroke-linecap="round"><path d="M4 15a7 7 0 0 1 16 0M4 15h16M8 15c0-2 1.8-4 4-4s4 2 4 4"/><path d="M3 19h18"/></svg>
+        Piscine <strong style="font-weight:600">partagée</strong> entre les logements
+      </div>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:12px">
+      <div style="grid-column:span 2;grid-row:span 2;position:relative;border-radius:6px;overflow:hidden;background:#fff">
+        <img class="slot" src="images/slide2.jpg" alt="Le séjour de l'appartement">
+      </div>
+      <div style="position:relative;border-radius:6px;overflow:hidden;background:#fff">
+        <img class="slot" src="images/slide4.jpg" alt="La cuisine équipée">
+      </div>
+      <div style="position:relative;border-radius:6px;overflow:hidden;background:#fff">
+        <img class="slot" src="images/slide3.jpg" alt="La salle d'eau">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥ LE LIEU ===== -->
+<section aria-label="Le lieu" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+    <div data-reveal style="position:relative;border-radius:10px;overflow:hidden;background:#dcecec;aspect-ratio:5/4;border:1px solid rgba(22,33,31,.08)">
+      <!-- carte stylisée -->
+      <div style="position:absolute;inset:0;background:#e6f0ef"></div>
+      <div style="position:absolute;left:-6%;top:-10%;width:70%;height:80%;background:#eee7d6;border-radius:0 0 60% 30%/0 0 55% 40%;transform:rotate(-8deg)"></div>
+      <div style="position:absolute;right:-12%;bottom:-14%;width:62%;height:66%;background:#eee7d6;border-radius:50% 40% 0 0/55% 45% 0 0"></div>
+      <svg width="100%" height="100%" viewBox="0 0 400 320" preserveAspectRatio="none" style="position:absolute;inset:0">
+        <path d="M40 20 C120 60 90 150 180 170 C260 188 300 250 380 250" fill="none" stroke="#1785C0" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".55"/>
+      </svg>
+      <div style="position:absolute;left:44%;top:47%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center">
+        <div style="background:#16211F;color:#fff;font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;white-space:nowrap;letter-spacing:.02em">Le Dimore del Salento</div>
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none"><path d="M13 29c6-8 10-12 10-17a10 10 0 1 0-20 0c0 5 4 9 10 17Z" fill="#E8622B"/><circle cx="13" cy="12" r="3.4" fill="#fff"/></svg>
+      </div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.05em;color:rgba(22,33,31,.5);background:rgba(255,255,255,.75);padding:4px 8px;border-radius:4px">carte — Madirokely, Nosy Be</div>
+    </div>
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">Le lieu</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.01em;margin:0 0 18px">À Madirokely, au cœur de Nosy Be.</h2>
+      <p style="font-size:16px;line-height:1.65;color:rgba(22,33,31,.68);margin:0 0 30px;max-width:46ch">Un quartier vivant mais tranquille, à deux pas des plages et des restaurants de l'île. Tout est accessible facilement.</p>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(22,33,31,.1)"><span style="font-size:15.5px;font-weight:500">Plage de Madirokely</span><span style="font-family:'Fraunces',serif;font-size:18px;color:#1785C0">5 min à pied</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(22,33,31,.1)"><span style="font-size:15.5px;font-weight:500">Ambatoloaka · bars &amp; restos</span><span style="font-family:'Fraunces',serif;font-size:18px;color:#1785C0">~10 min</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(22,33,31,.1);border-bottom:1px solid rgba(22,33,31,.1)"><span style="font-size:15.5px;font-weight:500">Aéroport de Fascène</span><span style="font-family:'Fraunces',serif;font-size:18px;color:#1785C0">~30 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥b HÔTE — CIAO, C'EST ALEX ===== -->
+<section aria-label="L'hôte" style="position:relative;background:#FBFBF9;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(36px,5vw,80px);align-items:center">
+    <div data-reveal style="position:relative">
+      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -28px rgba(10,20,19,.32)">
+        <!-- Portrait d'Alex à fournir : remplacer ce bloc par <img class="slot" src="images/alex.jpg" alt="Alex, votre hôte"> -->
+        <div class="portrait-ph">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+          <span>Portrait d'Alex — photo à ajouter</span>
+        </div>
+      </div>
+      <div style="position:absolute;left:-14px;bottom:24px;background:#fff;color:#16211F;padding:13px 20px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(10,20,19,.28)">
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:21px;line-height:1">Alex</div>
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#1785C0;margin-top:5px">Votre hôte · depuis 2024</div>
+      </div>
+    </div>
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px"><span style="width:34px;height:2px;background:#E8622B;border-radius:2px"></span><span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E8622B">Un bout d'Italie au bord du lagon</span></div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4vw,52px);line-height:1.06;letter-spacing:-.01em;margin:0 0 24px;color:#16211F">Ciao, c'est <span style="font-style:italic;font-weight:400">Alex</span>.</h2>
+      <div style="font-size:16.5px;line-height:1.72;color:rgba(22,33,31,.72);max-width:50ch;display:flex;flex-direction:column;gap:16px">
+        <p style="margin:0">Je suis italien, du Salento — cette pointe de terre et d'oliviers tout au sud de la botte. Il y a deux ans, je suis tombé amoureux de Nosy Be et j'ai décidé d'y poser mes valises.</p>
+        <p style="margin:0">J'ai construit cette résidence de A à Z, de mes mains. J'ai voulu y apporter un peu de chez moi : la lumière, la chaux blanche, le sens de l'accueil du Sud — au bord du lagon.</p>
+        <p style="margin:0">Quand tu réserves ici, tu réserves chez moi. Je réponds vite, je connais l'île par cœur, et je serai là pour rendre ton séjour simple et vrai.</p>
+      </div>
+      <a href="#contact" class="h-cta" style="margin-top:30px;display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;box-shadow:0 14px 34px -14px rgba(23,133,192,.7);transition:background .25s ease,transform .25s ease">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        Réserver en direct avec Alex
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑦ PRIX & RÉASSURANCE ===== -->
+<section aria-label="Le tarif" style="background:#16211F;color:#FBFBF9;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(36px,5vw,72px);align-items:center">
+    <div data-reveal>
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:16px">Le tarif</div>
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="font-size:15px;color:rgba(251,251,249,.6)">dès</span><span style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,9vw,104px);line-height:.9;letter-spacing:-.02em;color:#F2C230">45 €</span></div>
+      <div style="font-size:16px;color:rgba(251,251,249,.6);margin-top:6px">la nuit · pour l'appartement</div>
+      <div style="height:1px;background:rgba(251,251,249,.14);margin:30px 0"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 24px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Clim &amp; électricité</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Wifi Starlink</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Linge de maison</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(251,251,249,.85)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Accès piscine partagée</div>
+      </div>
+    </div>
+    <div data-reveal style="background:rgba(251,251,249,.05);border:1px solid rgba(251,251,249,.1);border-radius:14px;padding:clamp(26px,3vw,38px)">
+      <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);line-height:1.14;margin:0 0 12px">Réserve en direct,<br>au meilleur tarif.</h3>
+      <p style="font-size:15px;line-height:1.6;color:rgba(251,251,249,.68);margin:0 0 24px">En contactant l'hôte directement, tu obtiens le meilleur prix, une réponse rapide et de vrais conseils sur place.</p>
+      <a href="#contact" class="h-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16px;transition:background .25s ease,transform .25s ease">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        Réserver en direct avec l'hôte
+      </a>
+      <div style="display:flex;align-items:center;gap:12px;margin:20px 0;color:rgba(251,251,249,.4);font-size:12px"><span style="flex:1;height:1px;background:rgba(251,251,249,.14)"></span>ou via une plateforme<span style="flex:1;height:1px;background:rgba(251,251,249,.14)"></span></div>
+      <div style="display:flex;gap:10px">
+        <a href="#contact" class="h-chip2" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;border:1px solid rgba(251,251,249,.18);color:#fff;font-size:13.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
+        <a href="#contact" class="h-chip2" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;border:1px solid rgba(251,251,249,.18);color:#fff;font-size:13.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
+      </div>
+      <p style="font-size:12.5px;line-height:1.5;color:rgba(251,251,249,.45);margin:18px 0 0;text-align:center">Avis vérifiés et paiement protégé sur les plateformes · annulation flexible selon la période.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑧ CTA FINAL ===== -->
+<section id="contact" aria-label="Contact" style="position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img class="slot" src="images/slide1.jpg" alt="La piscine au coucher de soleil">
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,20,19,.82) 0%,rgba(10,20,19,.5) 55%,rgba(10,20,19,.2) 100%)"></div>
+  </div>
+  <div data-reveal style="position:relative;z-index:2;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;width:100%;color:#fff">
+    <div style="max-width:640px">
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(36px,5.5vw,76px);line-height:1.03;letter-spacing:-.015em;margin:0 0 20px">Un bout d'Italie<br>au bord du lagon.</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:rgba(255,255,255,.88);margin:0 0 34px;max-width:48ch">Écris à l'hôte, dis-nous tes dates. On te répond vite, avec de vrais conseils pour ton séjour à Nosy Be.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px">
+        <a href="#contact" class="h-cta" style="display:inline-flex;align-items:center;gap:11px;padding:17px 30px;border-radius:999px;background:#1785C0;color:#fff;font-weight:600;font-size:16.5px;box-shadow:0 16px 40px -12px rgba(23,133,192,.75);transition:background .25s ease,transform .25s ease">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.1 7.5L3 20.5l1.6-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          Réserver en direct avec l'hôte
+        </a>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+          <span style="font-size:12px;color:rgba(255,255,255,.6)">Aussi sur</span>
+          <a href="#contact" class="h-chip3" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.32);color:#fff;font-size:12.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#E8622B"></span>Airbnb</a>
+          <a href="#contact" class="h-chip3" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.32);color:#fff;font-size:12.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.8);display:inline-flex;align-items:center;gap:7px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1785C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Meilleur tarif garanti en direct</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑨ PARTENAIRE + FOOTER ===== -->
+<section aria-label="Partenaire" style="background:#FBFBF9;padding:clamp(56px,7vw,96px) clamp(20px,5vw,64px) clamp(32px,4vw,48px)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,4vw,56px);align-items:center;background:#F3F0E9;border-radius:16px;padding:clamp(28px,4vw,48px)">
+      <div>
+        <div style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(22,33,31,.45);margin-bottom:12px">Partenaire local</div>
+        <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.6vw,32px);line-height:1.12;margin:0 0 14px">Ton séjour facilité par Rentanoo.</h3>
+        <p style="font-size:15.5px;line-height:1.65;color:rgba(22,33,31,.66);margin:0;max-width:52ch">L'expert de la mobilité à Nosy Be : location de scooters et quads, transferts aéroport et bons conseils sur place. De quoi explorer l'île en toute liberté pendant ton séjour.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <div style="display:inline-flex;align-items:center;gap:9px;font-size:14px;color:rgba(22,33,31,.7)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16211F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h5l-2-6h3l2-3M7 11l2-3h3"/></svg>Scooters &amp; quads</div>
+          <div style="display:inline-flex;align-items:center;gap:9px;font-size:14px;color:rgba(22,33,31,.7)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16211F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-4l2-5h9l4 5h2a1 1 0 0 1 1 1v3h-3M3 16h3M9 16h9M6 16a2 2 0 1 0 4 0M17 16a2 2 0 1 0 4 0"/></svg>Transferts aéroport</div>
+        </div>
+        <a href="https://rentanoo.com" target="_blank" rel="noopener" class="h-link" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#1785C0">Découvrir Rentanoo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <footer style="margin-top:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(22,33,31,.1)">
+        <div>
+          <div style="font-family:'Fraunces',serif;font-weight:500;font-size:22px;line-height:1">Le Dimore <span style="font-style:italic;font-weight:400">del Salento</span></div>
+          <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(22,33,31,.5);margin-top:5px">Madirokely · Nosy Be · Madagascar</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px">
+          <a href="#contact" class="h-flink">Contact</a>
+          <a href="#decouvrir" class="h-flink">La résidence</a>
+          <a href="#contact" class="h-flink">Mentions légales</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;font-size:12.5px;color:rgba(22,33,31,.45)">
+        <span>© 2026 Le Dimore del Salento. Tous droits réservés.</span>
+        <a href="https://rentanoo.com" target="_blank" rel="noopener" class="h-flink-muted">Site propulsé par Rentanoo</a>
+      </div>
+    </footer>
+  </div>
+</section>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Scroll reveals
+    var revEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    revEls.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity .9s cubic-bezier(.16,.7,.3,1), transform .9s cubic-bezier(.16,.7,.3,1)';
+      el.style.willChange = 'opacity, transform';
+    });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      revEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revEls.forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }
+
+    // Header state on scroll
+    var header = document.getElementById('site-header');
+    var wm = document.getElementById('wm');
+    var wmSub = document.getElementById('wm-sub');
+    function onScroll() {
+      var solid = window.scrollY > 80;
+      if (solid) {
+        header.style.background = 'rgba(251,251,249,.92)';
+        header.style.backdropFilter = 'blur(10px)';
+        header.style.webkitBackdropFilter = 'blur(10px)';
+        header.style.boxShadow = '0 1px 0 rgba(22,33,31,.08)';
+        header.style.paddingTop = '12px';
+        header.style.paddingBottom = '12px';
+        header.style.color = '#16211F';
+        if (wm) wm.style.color = '#16211F';
+        if (wmSub) wmSub.style.color = 'rgba(22,33,31,.6)';
+      } else {
+        header.style.background = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.webkitBackdropFilter = 'none';
+        header.style.boxShadow = 'none';
+        header.style.paddingTop = '18px';
+        header.style.paddingBottom = '18px';
+        header.style.color = '#fff';
+        if (wm) wm.style.color = '#fff';
+        if (wmSub) wmSub.style.color = 'rgba(255,255,255,.82)';
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
+</script>
+
+</body>
+</html>
