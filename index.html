@@ -263,6 +263,20 @@
   <svg width="100%" height="14" viewBox="0 0 1200 14" preserveAspectRatio="none" style="display:block;opacity:.9"><path d="M0 7 Q 60 0 120 7 T 240 7 T 360 7 T 480 7 T 600 7 T 720 7 T 840 7 T 960 7 T 1080 7 T 1200 7" fill="none" stroke="#1785C0" stroke-width="1.6"/></svg>
 </div>
 
+<!-- ===== VIDÉO ===== -->
+<section aria-label="Vidéo" style="padding:clamp(8px,2vw,24px) clamp(20px,5vw,64px) clamp(56px,8vw,100px);max-width:1080px;margin:0 auto">
+  <div data-reveal style="text-align:center;max-width:640px;margin:0 auto clamp(30px,4vw,48px)">
+    <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#1785C0;margin-bottom:14px">En vidéo</div>
+    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.6vw,46px);line-height:1.08;letter-spacing:-.01em;margin:0">La visite en vidéo.</h2>
+  </div>
+  <div data-reveal class="yt-facade" data-yt="R8eUFUHUhbo" role="button" tabindex="0" aria-label="Lire la vidéo" style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;cursor:pointer;background:#0d1a20;box-shadow:0 30px 70px -30px rgba(10,20,19,.5)">
+    <img src="https://i.ytimg.com/vi/R8eUFUHUhbo/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/R8eUFUHUhbo/hqdefault.jpg'" alt="Aperçu de la vidéo de la résidence" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:.82">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <div style="width:76px;height:76px;border-radius:50%;background:rgba(23,133,192,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 34px -8px rgba(0,0,0,.55)"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ④ CE QUI FAIT LA DIFFÉRENCE ===== -->
 <section aria-label="Ce qui fait la différence" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto">
   <div data-reveal style="text-align:center;max-width:640px;margin:0 auto clamp(48px,6vw,80px)">
@@ -549,6 +563,8 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "En vidéo": { it: "In video", en: "On video" },
+        "La visite en vidéo.": { it: "La visita in video.", en: "The tour on video." },
         "Écrire à l'hôte": { it: "Scrivi all'host", en: "Message the host" },
         "Meilleur tarif": { it: "Miglior prezzo", en: "Best price" },
         "Ou par e-mail :": { it: "Oppure via e-mail:", en: "Or by e-mail:" },
@@ -700,6 +716,13 @@
         else if (t === "Booking") { a.href = BOOKING; a.target = "_blank"; a.rel = "noopener"; }
       });
     })();
+
+    // Vidéo YouTube — façade légère (l'iframe ne se charge qu'au clic)
+    [].forEach.call(document.querySelectorAll('.yt-facade'), function (f) {
+      function play() { var id = f.getAttribute('data-yt'); f.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="Vidéo" allow="autoplay; encrypted-media; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'; }
+      f.addEventListener('click', play);
+      f.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
+    });
 
     // Hero carousel — fondu enchaîné automatique
     (function () {
