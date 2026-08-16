@@ -46,7 +46,9 @@ Toutes les images sont déjà en `.webp` avec `loading="lazy"`. À adapter :
 - **Textes** : titre hero, tagline, tarif (`dès X €`), descriptions, nom de l'hôte (`Ciao, c'est …` → id `host-h2` + `hostHtml`), bandeau 5 familles, « Le lieu », etc.
 - **i18n** : pour CHAQUE texte FR modifié, mettre à jour la **clé + traductions** dans l'objet `T` (et `titleHtml`/`hostHtml` pour le titre/hôte). Sinon l'IT/EN reste en français.
 - **Photos** : renommer/mapper les `.webp` aux bons emplacements (hero carrousel, galerie, différence, appartement, CTA bg).
-- **Portrait hôte** : remplacer le bloc placeholder `.portrait-ph` (section HÔTE) par `<img class="slot" src="images/alex.webp" …>`.
+- **Portrait hôte** : remplacer le bloc placeholder `.portrait-ph` (section HÔTE) par `<img class="slot" src="images/chris.webp" …>`. Photo de Chris = bucket Supabase **`photo fondateur/photo techer christopher .png`**. ⚠️ **Nettoyage contour** : la photo fournie a un **anneau blanc + coins sombres** incrustés → les supprimer (PIL : masque cercle `R≈558` centré, flou gaussien ~10, composite sur un fond = couleur moyenne d'un patch intérieur gris ; cf. `chris-v2.webp`). Afficher en `max-width:410px` (sinon trop grosse). **Anti-cache** : si on remplace une image existante, changer le **nom de fichier** (ex. `-v2`) sinon le navigateur garde l'ancienne.
+- **Logo Rentanoo (partenaire)** : source = bucket **`email-asset/logo rentanoo 2.png`** (recadrer les marges blanches → `images/rentanoo-logo.webp`, ~520px). Placer dans la **section Partenaire** (en tête, `height:34px`) et dans le **footer** (« Site propulsé par [logo] », `height:17px`). Fond blanc du logo → se fond dans les sections claires.
+- **Logo du site (si fourni)** : emblème rond → header (`.hdr-logo`, **version inversée sur le hero ↔ couleur au scroll** via `#site-header.scrolled .logo-color`) + footer ; favicon assorti.
 
 ## 3bis. SEO (OBLIGATOIRE — même recette pour tous les sites)
 > Remplacer partout `SLUG` (ex. `appart-ambatoloaka`), `NOM`, `LOCALITE` (Madirokely/Andilana/Ambatoloaka), `PRIX` (25/45/85), `CODE` (Rentanoo), `IDAIRBNB`, `AAAA-MM-JJ` (date du jour).
