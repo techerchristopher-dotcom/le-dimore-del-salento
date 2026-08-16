@@ -19,9 +19,11 @@ Sert aussi de **base réutilisable** pour créer un site par hébergement → vo
 ```
 index.html            ← tout le site (markup + <style> + <script>)
 CNAME                 ← domaine perso (ledimoredelsalento.rentanoo.com)
+robots.txt            ← SEO : Allow all + lien vers le sitemap
+sitemap.xml           ← SEO : 1 URL (la home), lastmod
 .gitignore            ← .DS_Store
 .claude/launch.json   ← serveur de preview local (python http.server)
-images/               ← photos .webp + logo.png
+images/               ← photos .webp + logo.png + og.jpg (partage 1200×630) + favicon.svg
 ```
 
 ## Sections de la page (dans l'ordre)
@@ -69,11 +71,22 @@ for f in res-1 res-2 chambre-1 cuisine-1 sdb-2; do cwebp -quiet -q 78 -m 6 -resi
 (HEIC → JPG intermédiaire via `sips -s format jpeg …` si besoin ; `-resize 0 H` = cap la hauteur pour photos portrait.)
 Dans le HTML : `<img class="slot" loading="lazy" decoding="async" src="images/x.webp">`. Logo = `logo.png` détouré (fond retiré via PIL flood/keying, ~600px).
 
+## SEO (présent sur tous les sites — OBLIGATOIRE, cf. TEMPLATE §3bis)
+Chaque site embarque, en plus de la base déjà saine (`<html lang="fr">`, `<title>`/`<meta description>` uniques et riches en mots-clés, **un seul `<h1>`** = `#hero-title`, WebP + lazy) :
+- **`robots.txt`** (Allow all + `Sitemap:`) et **`sitemap.xml`** (1 URL = la home, `lastmod`) à la racine.
+- **Bloc `<head>` SEO** (juste après la `<meta name="description">`) : `canonical`, `robots` (max-image-preview:large), `theme-color #16211F`, `geo.region/placename`, **Open Graph** (og:type/site_name/locale + it/en/url/title/description/**image**/image:width=1200/height=630/alt), **Twitter Card** (`summary_large_image`), **favicon** (`images/favicon.svg` — soleil+vagues bleu/or ; dimore garde son `logo.png`), `preconnect` vers `i.ytimg.com`, et surtout **JSON-LD `LodgingBusiness`** (name, description, url, image[], telephone, email, priceRange « À partir de X € la nuit », address PostalAddress {locality, region:Nosy Be, country:MG}, amenityFeature[], `sameAs` → Rentanoo + Airbnb).
+- **`images/og.jpg` 1200×630 « marketing »** : photo hero + scrim + nom (Fraunces) + accroche + chip prix doré + eyebrow « RENTANOO · NOSY BE ». Générée via le canvas `_ogmaker.html` (cf. TEMPLATE §3bis), à supprimer avant commit.
+- **Non fait volontairement** : `hreflang` (inutile, 1 seule URL, langues en JS) ; lat/lng exact et `aggregateRating` (ne pas inventer — à ajouter quand vrais avis / emplacement précis).
+- **Sitemaps INDÉPENDANTS** par sous-domaine (1 sous-domaine = 1 propriété Search Console). Pour tout regrouper → propriété **« Domaine » `rentanoo.com`** (TXT DNS Hostinger). Gros levier off-page restant = **liens internes depuis `rentanoo.com`** vers chaque site vitrine.
+
 ## Déploiement
 ```bash
-git add -A && git commit -m "…" && git push origin main   # Pages rebuild ~1-2 min
+# repo ISOLÉ (jamais git add -A depuis le home) → ajouter les fichiers voulus
+git add index.html robots.txt sitemap.xml images/*.webp images/og.jpg images/favicon.svg CNAME
+git commit -m "…" && git push origin main   # Pages rebuild ~1-2 min
 ```
 Vérifier live : `curl -s https://ledimoredelsalento.rentanoo.com/`.
+Après mise en ligne : soumettre `…/sitemap.xml` dans **Search Console** + « Scrape Again » dans le **Facebook Sharing Debugger** (rafraîchit l'aperçu WhatsApp/FB).
 
 ### Domaine perso (sous-domaine rentanoo.com) — déjà configuré ici
 1. DNS **Hostinger** (rentanoo.com y est géré) : enregistrement **CNAME** `ledimoredelsalento` → `techerchristopher-dotcom.github.io`.
@@ -82,4 +95,5 @@ Vérifier live : `curl -s https://ledimoredelsalento.rentanoo.com/`.
 
 ## En attente / à finaliser
 - Portrait d'**Alex** (placeholder — bloc commenté section « HÔTE », prévoir `images/alex.*`).
-- Open Graph (image de partage WhatsApp/FB) + favicon carré (optionnels).
+- ~~Open Graph + favicon~~ ✅ faits (cf. section SEO).
+- Côté client : soumettre les sitemaps dans Search Console ; envisager la propriété « Domaine » `rentanoo.com` ; ajouter les liens internes rentanoo.com → sites vitrines.

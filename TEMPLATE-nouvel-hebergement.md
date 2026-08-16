@@ -48,6 +48,80 @@ Toutes les images sont déjà en `.webp` avec `loading="lazy"`. À adapter :
 - **Photos** : renommer/mapper les `.webp` aux bons emplacements (hero carrousel, galerie, différence, appartement, CTA bg).
 - **Portrait hôte** : remplacer le bloc placeholder `.portrait-ph` (section HÔTE) par `<img class="slot" src="images/alex.webp" …>`.
 
+## 3bis. SEO (OBLIGATOIRE — même recette pour tous les sites)
+> Remplacer partout `SLUG` (ex. `appart-ambatoloaka`), `NOM`, `LOCALITE` (Madirokely/Andilana/Ambatoloaka), `PRIX` (25/45/85), `CODE` (Rentanoo), `IDAIRBNB`, `AAAA-MM-JJ` (date du jour).
+
+**a) `robots.txt`** (racine) :
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://SLUG.rentanoo.com/sitemap.xml
+```
+
+**b) `sitemap.xml`** (racine) :
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://SLUG.rentanoo.com/</loc>
+    <lastmod>AAAA-MM-JJ</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+**c) `images/favicon.svg`** (soleil + vagues, charte marque — sauf si le site a un vrai logo, garder `logo.png`) :
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#1785C0"/>
+  <circle cx="32" cy="27" r="11" fill="#F2C230"/>
+  <path d="M6 44c6 0 6-4 12-4s6 4 12 4 6-4 12-4 6 4 12 4" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M6 53c6 0 6-4 12-4s6 4 12 4 6-4 12-4 6 4 12 4" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+</svg>
+```
+
+**d) Bloc `<head>` SEO** — coller **juste après la `<meta name="description">`** (adapter les valeurs) :
+```html
+<link rel="canonical" href="https://SLUG.rentanoo.com/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#16211F">
+<meta name="author" content="Rentanoo">
+<meta name="geo.region" content="MG">
+<meta name="geo.placename" content="LOCALITE, Nosy Be">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://i.ytimg.com">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rentanoo · Nosy Be">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://SLUG.rentanoo.com/">
+<meta property="og:title" content="NOM — ACCROCHE · Nosy Be">
+<meta property="og:description" content="… (reprendre/raccourcir la meta description) …">
+<meta property="og:image" content="https://SLUG.rentanoo.com/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NOM — LOCALITE, Nosy Be">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOM — ACCROCHE · Nosy Be">
+<meta name="twitter:description" content="… (idem) …">
+<meta name="twitter:image" content="https://SLUG.rentanoo.com/images/og.jpg">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"NOM","description":"…","url":"https://SLUG.rentanoo.com/","image":["https://SLUG.rentanoo.com/images/og.jpg","https://SLUG.rentanoo.com/images/hero-1.webp"],"telephone":"+261373437912","email":"chrisrentanoo@gmail.com","priceRange":"À partir de PRIX € la nuit","currenciesAccepted":"EUR","address":{"@type":"PostalAddress","addressLocality":"LOCALITE","addressRegion":"Nosy Be","addressCountry":"MG"},"areaServed":"Nosy Be","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Wifi","value":true},{"@type":"LocationFeatureSpecification","name":"Cuisine équipée","value":true}],"sameAs":["https://rentanoo.com/hebergement/CODE","https://www.airbnb.fr/rooms/IDAIRBNB"]}
+</script>
+```
+> Valider le JSON-LD (parse strict) avant deploy : `python3 -c "import re,json;[json.loads(b) for b in re.findall(r'ld\+json\">(.*?)</script>',open('index.html').read(),16)]"`.
+
+**e) Image de partage `images/og.jpg` 1200×630 « marketing »** (nom + accroche + prix incrustés sur la photo hero) :
+Créer un fichier temporaire `_ogmaker.html` à la racine, avec un `<canvas width=1200 height=630>` et un `window.__drawOG(site)` qui : charge `images/hero-1.webp` (`await img.decode()`), attend les polices (`document.fonts.load(...)` avec race timeout 4 s), dessine la photo en **cover**, un **scrim** gauche+bas `rgba(9,26,32,…)`, l'eyebrow doré `RENTANOO · NOSY BE` (Manrope 600 20px, letterSpacing 4px), le **nom** (Fraunces 300 66px blanc + liseré doré), l'**accroche** (Manrope 500 30px), un **chip prix doré** `dès PRIX € / nuit` (Manrope 700 30px, fond `#F2C230`, texte `#16211F`), puis `return canvas.toDataURL('image/jpeg',0.85)`.
+Procédure : `python3 -m http.server` → ouvrir `_ogmaker.html` dans le navigateur → **réveiller l'onglet par un screenshot** (sinon rAF/polices throttlés en arrière-plan) → appeler `window.__drawOG(...)` → récupérer le dataURL → décoder en `images/og.jpg` via python (`base64.b64decode`) → **supprimer `_ogmaker.html`** avant commit.
+> Version rapide (photo brute, sans texte) si pressé : `dwebp hero-1.webp -o /tmp/x.png && sips --resampleWidth 1200 /tmp/x.png --out /tmp/y.png && sips -c 630 1200 /tmp/y.png --out /tmp/z.png && sips -s format jpeg -s formatOptions 82 /tmp/z.png --out images/og.jpg`.
+
 ## 4. Contacts & plateformes (dans le `<script>`)
 ```js
 var WA_NUM = "261XXXXXXXXX";           // WhatsApp sans +
@@ -68,7 +142,10 @@ var BOOKING= "https://www.booking.com/hotel/…";
 
 ## 6. Déployer + sous-domaine
 ```bash
-git add -A && git commit -m "Site NOUVEAU-SLUG" 
+# repo ISOLÉ d'abord (piège home-is-git) : git init puis add SPÉCIFIQUE (jamais -A depuis le home)
+git init -q && git symbolic-ref HEAD refs/heads/main
+git add index.html robots.txt sitemap.xml .gitignore .claude/launch.json images/*.webp images/og.jpg images/favicon.svg
+git commit -m "Site NOUVEAU-SLUG"
 gh repo create NOUVEAU-SLUG --public --source=. --remote=origin --push
 ```
 Puis le sous-domaine `SLUG.rentanoo.com` :
@@ -88,6 +165,8 @@ gh api -X PUT repos/techerchristopher-dotcom/NOUVEAU-SLUG/pages -F https_enforce
 - [ ] WhatsApp + e-mail cliquables · [ ] Airbnb/Booking/Rentanoo réels · [ ] Google Maps
 - [ ] Photos WebP + lazy (dossier ≤ ~2,5 Mo) · [ ] FR/IT/EN complet
 - [ ] Responsive OK · [ ] Sous-domaine HTTPS en ligne · [ ] Portrait hôte (si dispo)
+- [ ] **SEO (§3bis)** : robots.txt + sitemap.xml · bloc `<head>` OG/Twitter/JSON-LD/canonical/favicon · **og.jpg 1200×630** · JSON-LD validé
+- [ ] Après deploy : sitemap soumis dans Search Console · « Scrape Again » Facebook Debugger
 
 ---
 
