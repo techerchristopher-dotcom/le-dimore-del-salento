@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ledimoredelsalento.rentanoo.com/sitemap.xml
