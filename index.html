@@ -48,6 +48,15 @@
   a:hover{color:#12688F}
   img{border:0}
   ::selection{background:#1785C0;color:#fff}
+  .resa-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+  .resa-field{display:flex;flex-direction:column;gap:7px;font-size:13.5px;font-weight:600;color:rgba(22,33,31,.72)}
+  .resa-field input,.resa-field select,.resa-field textarea{font:inherit;font-weight:500;color:#16211F;padding:12px 14px;border:1px solid rgba(22,33,31,.16);border-radius:10px;background:#fbfbf9;width:100%;box-sizing:border-box}
+  .resa-field input:focus,.resa-field textarea:focus{outline:none;border-color:#1785C0;box-shadow:0 0 0 3px rgba(23,133,192,.14)}
+  .resa-field textarea{resize:vertical}
+  .resa-submit{margin-top:22px;width:100%;padding:16px;border:0;border-radius:999px;background:#1785C0;color:#fff;font-family:inherit;font-weight:600;font-size:16.5px;cursor:pointer;transition:background .25s ease,transform .25s ease}
+  .resa-submit:hover{background:#12688F;transform:translateY(-1px)}
+  .resa-submit:disabled{opacity:.6;cursor:default;transform:none}
+  @media(max-width:560px){.resa-grid{grid-template-columns:1fr}}
 
   @keyframes heroZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
   @keyframes drawLine{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
@@ -499,6 +508,31 @@
   </div>
 </section>
 
+<!-- ===== DEMANDE DE RÉSERVATION ===== -->
+<section id="reservation" aria-label="Demande de réservation" style="background:#16211F;color:#fff;padding:clamp(64px,9vw,110px) clamp(20px,5vw,64px);scroll-margin-top:72px">
+  <div style="max-width:720px;margin:0 auto">
+    <div data-reveal style="text-align:center;margin-bottom:clamp(26px,4vw,40px)">
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#F2C230;margin-bottom:14px">Réservation</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-.01em;margin:0 0 14px;color:#fff">Demandez vos dates</h2>
+      <p style="font-size:16px;line-height:1.6;color:rgba(251,251,249,.72);margin:0 auto;max-width:52ch">Choisissez vos dates et laissez-nous vos coordonnées — on revient vers vous très vite pour confirmer les disponibilités.</p>
+    </div>
+    <form id="resa-form" data-reveal novalidate style="background:#ffffff;color:#16211F;border-radius:16px;padding:clamp(22px,3.5vw,38px);box-shadow:0 30px 70px -30px rgba(0,0,0,.5)">
+      <div class="resa-grid">
+        <label class="resa-field"><span>Arrivée</span><input type="date" name="arrivee" required></label>
+        <label class="resa-field"><span>Départ</span><input type="date" name="depart" required></label>
+        <label class="resa-field"><span>Prénom</span><input name="prenom" autocomplete="given-name" required></label>
+        <label class="resa-field"><span>Nom</span><input name="nom" autocomplete="family-name" required></label>
+        <label class="resa-field"><span>Téléphone</span><input type="tel" name="telephone" autocomplete="tel" required></label>
+        <label class="resa-field"><span>E-mail</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="resa-field" style="grid-column:1/-1"><span>Message (optionnel)</span><textarea name="message" rows="3"></textarea></label>
+      </div>
+      <button type="submit" class="resa-submit">Envoyer ma demande</button>
+      <p id="resa-msg" role="status" aria-live="polite" style="margin:14px 0 0;font-size:14.5px;text-align:center"></p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:rgba(22,33,31,.5);text-align:center">Gratuit et sans engagement · réponse rapide en direct</p>
+    </form>
+  </div>
+</section>
+
 <!-- ===== ⑧ CTA FINAL ===== -->
 <section id="contact" aria-label="Contact" style="position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden">
   <div style="position:absolute;inset:0;z-index:0">
@@ -593,6 +627,18 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "Réservation": { it: "Prenotazione", en: "Booking" },
+        "Demandez vos dates": { it: "Richiedi le tue date", en: "Request your dates" },
+        "Choisissez vos dates et laissez-nous vos coordonnées — on revient vers vous très vite pour confirmer les disponibilités.": { it: "Scegli le tue date e lasciaci i tuoi contatti — ti ricontattiamo molto presto per confermare la disponibilità.", en: "Pick your dates and leave us your details — we'll get back to you very soon to confirm availability." },
+        "Arrivée": { it: "Arrivo", en: "Check-in" },
+        "Départ": { it: "Partenza", en: "Check-out" },
+        "Prénom": { it: "Nome", en: "First name" },
+        "Nom": { it: "Cognome", en: "Last name" },
+        "Téléphone": { it: "Telefono", en: "Phone" },
+        "E-mail": { it: "E-mail", en: "E-mail" },
+        "Message (optionnel)": { it: "Messaggio (facoltativo)", en: "Message (optional)" },
+        "Envoyer ma demande": { it: "Invia la mia richiesta", en: "Send my request" },
+        "Gratuit et sans engagement · réponse rapide en direct": { it: "Gratuito e senza impegno · risposta rapida in diretta", en: "Free, no obligation · quick direct reply" },
         "En vidéo": { it: "In video", en: "On video" },
         "La visite en vidéo.": { it: "La visita in video.", en: "The tour on video." },
         "Écrire à l'hôte": { it: "Scrivi all'host", en: "Message the host" },
@@ -858,6 +904,32 @@
       if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
     });
   });
+</script>
+
+<script>
+(function(){
+  var form=document.getElementById('resa-form'); if(!form) return;
+  var msg=document.getElementById('resa-msg');
+  var WEBHOOK='https://n8n.srv1285649.hstgr.cloud/webhook/reservation';
+  var SITE='dimore-del-salento';
+  var today=new Date().toISOString().slice(0,10);
+  var arr=form.querySelector('[name=arrivee]'), dep=form.querySelector('[name=depart]');
+  if(arr){ arr.min=today; } if(dep){ dep.min=today; }
+  if(arr){ arr.addEventListener('change',function(){ if(dep){ dep.min=arr.value||today; } }); }
+  function show(t,c){ msg.innerHTML=t; msg.style.color=c; }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={site:SITE}; new FormData(form).forEach(function(v,k){ d[k]=(''+v).trim(); });
+    if(!d.prenom||!d.nom||!d.email||!d.telephone||!d.arrivee||!d.depart){ show('Merci de remplir les champs requis.','#E8622B'); return; }
+    if(d.depart<=d.arrivee){ show("La date de départ doit être après l'arrivée.",'#E8622B'); return; }
+    var btn=form.querySelector('.resa-submit'), orig=btn.textContent; btn.disabled=true; btn.textContent='Envoi…'; show('','');
+    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw 0; var g=form.querySelector('.resa-grid'); if(g){ g.style.display='none'; } btn.style.display='none';
+        show("✅ Demande envoyée ! Un e-mail de confirmation arrive dans votre boîte. On revient vers vous très vite.","#1a8a55"); })
+      .catch(function(){ btn.disabled=false; btn.textContent=orig;
+        show('Une erreur est survenue. Réessayez, ou écrivez-nous à <a href="mailto:chrisrentanoo@gmail.com" style="color:#F2C230;text-decoration:underline">chrisrentanoo@gmail.com</a>.','#E8622B'); });
+  });
+})();
 </script>
 
 </body>
