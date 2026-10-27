@@ -134,6 +134,18 @@
     .lang-btn{padding:3px 2px 2px}
   }
 </style>
+<style>
+  .tf-card{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:clamp(22px,4vw,48px);padding:clamp(24px,3.5vw,42px);border-radius:20px;background:linear-gradient(120deg,#fff4ea,#fffaf2);border:1px solid rgba(232,52,42,.14);box-shadow:0 24px 60px -40px rgba(232,52,42,.45)}
+  .tf-logo{width:clamp(96px,13vw,150px);height:auto;border-radius:24%;flex:none;box-shadow:0 18px 40px -20px rgba(232,52,42,.55)}
+  .tf-eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E8342A;margin-bottom:10px}
+  .tf-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-.01em;margin:0 0 12px;color:#16211F}
+  .tf-title span{font-style:italic;font-weight:400;color:#E8342A}
+  .tf-text{font-size:16px;line-height:1.62;color:rgba(22,33,31,.72);margin:0 0 22px;max-width:58ch}
+  .tf-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#E8342A,#FF8A1E);color:#fff;font-weight:600;font-size:15.5px;box-shadow:0 14px 30px -14px rgba(232,52,42,.7);transition:transform .25s ease,box-shadow .25s ease}
+  .tf-cta:hover{transform:translateY(-2px);box-shadow:0 18px 36px -14px rgba(232,52,42,.8)}
+  .tf-cta::after{content:'\2197';font-size:14px}
+  @media (max-width:640px){.tf-card{flex-direction:column;text-align:center}.tf-text{margin-left:auto;margin-right:auto}}
+</style>
 </head>
 <body>
 
@@ -504,6 +516,18 @@
         <a href="#contact" class="h-chip2" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;border:1px solid rgba(251,251,249,.18);color:#fff;font-size:13.5px;font-weight:600;transition:border-color .25s ease"><span style="width:7px;height:7px;border-radius:50%;background:#1785C0"></span>Booking</a>
       </div>
       <p style="font-size:12.5px;line-height:1.5;color:rgba(251,251,249,.45);margin:18px 0 0;text-align:center">Avis vérifiés et paiement protégé sur les plateformes · annulation flexible selon la période.</p>
+    </div>
+  </div>
+</section>
+
+<section id="taxi-food" aria-label="Taxi Food, livraison de repas" style="background:#ffffff;padding:clamp(48px,6vw,80px) clamp(20px,5vw,64px);scroll-margin-top:76px">
+  <div data-reveal class="tf-card">
+    <img class="tf-logo" src="images/taxifood-logo.webp" width="256" height="256" alt="Logo Taxi Food Nosy Be" loading="lazy" decoding="async">
+    <div class="tf-body">
+      <div class="tf-eyebrow">Taxi Food · Livraison à Nosy Be</div>
+      <h2 class="tf-title">La flemme de cuisiner ? <span>Faites-vous livrer.</span></h2>
+      <p class="tf-text">Pas envie de faire à manger ce soir ? Avec Taxi Food, commandez auprès des restaurants de Nosy Be et faites-vous livrer directement au logement. Pizza, burger, tacos ou crêpes : il ne reste plus qu'à mettre les pieds sous la table.</p>
+      <a class="tf-cta" href="https://taxifoodnosybe.distripro207.com/" target="_blank" rel="noopener">Commander sur Taxi Food</a>
     </div>
   </div>
 </section>
@@ -932,5 +956,17 @@
 })();
 </script>
 
+<!-- logos officiels des plateformes -->
+<style>.pl-logo{height:20px;width:auto;display:inline-block;vertical-align:middle;background:#fff;padding:3px 7px;border-radius:6px;box-sizing:content-box}.pl-logo.rt{height:22px}</style>
+<script>(function(){var L={airbnb:["images/logo-airbnb.svg","Airbnb",""],booking:["images/logo-booking.svg","Booking.com",""],rentanoo:["images/rentanoo-logo.webp","Rentanoo","rt"]};
+function key(a){var h=a.getAttribute("href")||"",t=(a.textContent||"").trim();
+if(/airbnb\.[a-z.]+\/rooms/.test(h)||/^Airbnb\b/.test(t))return"airbnb";
+if(/booking\.com/.test(h)||/^Booking(\.com)?\b/.test(t))return"booking";
+if(/rentanoo\.com\/hebergement/.test(h)&&/^Rentanoo/.test(t))return"rentanoo";}
+function run(){document.querySelectorAll("a").forEach(function(a){if(a.dataset.pl)return;var k=key(a);if(!k)return;
+Array.prototype.slice.call(a.childNodes).forEach(function(n){if(n.nodeType!==3)return;var re=/(Booking\.com|Booking|Airbnb|Rentanoo)/;if(!re.test(n.nodeValue))return;
+var parts=n.nodeValue.split(re),f=document.createDocumentFragment();parts.forEach(function(p){if(re.test(p)&&p.length>0){var i=document.createElement("img");i.src=L[k][0];i.alt=L[k][1];i.className="pl-logo "+L[k][2];f.appendChild(i)}else if(p)f.appendChild(document.createTextNode(p))});a.replaceChild(f,n)});
+a.dataset.pl="1"})}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){setTimeout(run,0)});else setTimeout(run,0)})();</script>
 </body>
 </html>
